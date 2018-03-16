@@ -1,5 +1,5 @@
 ---
-title             : "Moving Beyond Academic Echo Chambers :A Commentary on Hershberger (2003) "
+title             : "Moving Beyond Academic Echo Chambers of Structural Equation Modeling: A Commentary on Hershberger (2003) "
 
 author: 
   - name          : "Chi-Lin Yu"
@@ -11,7 +11,7 @@ affiliation:
     institution   : "Department of Psychology, National Taiwan University "
 
 author_note: |
-  The present commentary is a homework of Structural Equation Modeling (SEM) course in Department of Psychology, National Taiwan University. Mentor: Li-Jen Weng. Student ID: R05227101 (Chi-Lin Yu). E-mail address: r05227101@ntu.edu.tw; psychilinyu@gmail.com.
+  The present commentary is a homework (HW1) of Structural Equation Modeling course in Department of Psychology, National Taiwan University. Mentor: Li-Jen Weng. Student ID: R05227101 (Chi-Lin Yu). E-mail address: r05227101@ntu.edu.tw; psychilinyu@gmail.com.
 
 
 bibliography      : ["r-references.bib"]
@@ -31,13 +31,6 @@ output            : papaja::apa6_pdf
 library("papaja")
 ```
 
-```{r analysis_preferences}
-# Seed for random number generation
-set.seed(42)
-```
-
-
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
 
 \newpage
