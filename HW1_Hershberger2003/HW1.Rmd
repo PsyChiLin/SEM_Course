@@ -31,6 +31,11 @@ output            : papaja::apa6_pdf
 library("papaja")
 ```
 
+Structural equation modeling (SEM) is a widely used statistical procedure in psychological research. Over the past decades, SEM applications are published in numerous research both substantive one adopted SEM to analyze real data and the technical one that developed new progress of SEM. Nowatoday, interests in SEM is high and continue to grow (REF). Here, the present study reviewed the work doned by Hershberger (2003), which reviewed the growth of SEM from 1994 to 2001, to get a deeper understandings of the SEM progress in the literature. In addition, several own perspectives about the paper (REF) and SEM methodlogy itself are provided. In other words, the rest of the present paper is organized as a quick review for Hershberger (2003), followed by a series of proposed viewpoints and ends with a conclusion section. 
+
+Hershberger (2003) reviewed the growth of SEM from 1994 to 2001. They used *PsycIFO* database to locate journal articles published during these seven years, and both substantive and technical research with SEM techiques were identified. Also, they specifically examine the presence of SEM papers in American Psychological Association (APA) journals. Likewise, they examined the development of a SEM-specific journal, *Structural Equation Modeling: A Muvtltidisciplinary Journal*, during this period. The results showed the that number of SEM articles, both the number of substantive articles and the number of techinical articles, increased during this period. The technical articles that published in *Structural Equation Modeling: A Multidisciplinary Journal* contributed as much as all other journals combined. Forty-seven categroies were created to characterize the development of SEM methodoloy. SEM was also identified to have the most consistently high level of development relative to other multivariate statistical tools, such as exploratory factor analysis. Overall, hershberger (2003) suggested that SEM not only could be considered as the most popular tool for multivariate method of data analysis, but also had a stable methodological development with pace of the use in practical research.
+
+
 
 
 \newpage
