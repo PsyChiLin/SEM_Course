@@ -54,7 +54,6 @@ Overall, from these four dimensions, it was no doubt that there is an highly act
 \noindent
 Although the growth of SEM have been evidenced [@hershberger2003growth] and SEM as a great tool has provided better characterization of data, it is equally important to let all SEM users understand its technical progress and how to correctly use SEM/explain the results of SEM. 
 
-\setlength{\parindent}{4ex}
 Regarding the technical progress of SEM, most of these important articles were published in *Structural Equation Modeling: A Multidisciplinary Journal*, and others were published in methodology-specific journals, such as *Psychometrika* and *Multivariate Behavioral Research*. Though the publications in those specific journals can provided important contributions to SEM progress, it is also clear that applied users without strong methodological background would not be interested in those journals. The applied researchers are more likely to directly use SEM rather than understanding its technical details. Thus, the latest SEM progress can not be easily promoted and adopted in practical research. 
 
 In addition, despite the widespread use of SEM, misunderstandings regarding its purpose and methods persist. In 2013, a chapter entitled "Eight Myths About Causality and Structural Equation Models" [@bollen2013eight] presented eight major misunderstandings of SEM. Those myths contains key procedures of SEM from the purpose (e.g., causal relations), the model, to interpretations. It seems that user and researchers (even reviewers), who used SEM to establish their theories or tell their stories, do need a lot more training on SEM in order to overcome the misinformation.
@@ -68,7 +67,9 @@ In order to prevent SEM from becoming a widely used but poorly understood statis
 
 # Conclusion
 \noindent
-The present commentary reviewed the findings in Hershberger (2003) and provided own viewpoints. Four dimensions for the growth of SEM were discussed. Most of all, the rooms for improvements were also suggested. The present study sincerely hopes that SEM community can move beyond academic echo chambers, further expanding the energy and all novel usages of SEM to all researchers.
+The present commentary reviewed the findings in Hershberger (2003) and provided own viewpoints. Four dimensions for the growth of SEM were discussed. Most of all, the rooms for improvements were also suggested.
+
+The present study sincerely hopes that SEM community can move beyond academic echo chambers, further expanding the energy and all novel usages of SEM to all researchers.
 
 
 \newpage
