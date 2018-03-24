@@ -1,0 +1,176 @@
+---
+title             : "The title"
+shorttitle        : "Title"
+
+author: 
+  - name          : "First Author"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Postal address"
+    email         : "my@email.com"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1,2"
+
+affiliation:
+  - id            : "1"
+    institution   : "Wilhelm-Wundt-University"
+  - id            : "2"
+    institution   : "Konstanz Business School"
+
+author_note: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+
+abstract: |
+  Enter abstract here. Each new line herein must be indented, like this line.
+  
+keywords          : "keywords"
+wordcount         : "X"
+
+bibliography      : ["r-references.bib"]
+
+figsintext        : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : yes
+mask              : no
+
+class             : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r load_packages, include = FALSE}
+library("papaja")
+```
+
+```{r analysis_preferences}
+# Seed for random number generation
+set.seed(42)
+```
+\setcounter{MaxMatrixCols}{20}
+
+$\begin{bmatrix}
+    \eta_{1} \\
+    \eta_{2} \\
+    \vdots \\
+    \eta_{m} \\
+    x_{1} \\
+    x_{2} \\
+    \vdots \\
+    x_{p} \\
+    y_{1} \\
+    y_{2} \\
+    \vdots \\
+    y_{q}
+\end{bmatrix}$
+= 
+$\begin{bmatrix}
+    \beta_{11} & \beta_{12} & \dots & \beta_{1m} & 0_{11} & 0_{12} & \dots & 0_{1p} & 0_{11} & 0_{12} & \dots & 0_{1q} \\
+    \beta_{21} & \beta_{22} & \dots & \beta_{2m} & 0_{21} & 0_{22} & \dots & 0_{2p} & 0_{21} & 0_{22} & \dots & 0_{2q} \\
+    \vdots &  \vdots  &  \ddots &  \vdots  & \vdots & \vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots  \\
+    \beta_{m1} & \beta_{m2} & \dots & \beta_{mm} & 0_{m1} & 0_{m2} & \dots & 0_{mp} & 0_{m1} & 0_{m2} & \dots & 0_{mq} \\
+    0_{11} & 0_{12} & \dots & 0_{1m} & 0_{11} & 0_{12} & \dots & 0_{1p} & 0_{11} & 0_{22} & \dots & 0_{1q} \\
+    0_{21} & 0_{22} & \dots & 0_{2m} & 0_{21} & 0_{22} & \dots & 0_{2p} & 0_{21} & 0_{22} & \dots & 0_{2q} \\
+     \vdots &  \vdots  &  \ddots &  \vdots  & \vdots & \vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots  \\
+    0_{p1} & 0_{p2} & \dots & 0_{pm} & 0_{p1} & 0_{p2} & \dots & 0_{pp} & 0_{11} & 0_{22} & \dots & 0_{pq} \\
+    \lambda_{y11} & \lambda_{y12} & \dots & \lambda_{y1m} & 0_{11} & 0_{12} & \dots & 0_{1p} & 0_{11} & 0_{22} & \dots & 0_{1q} \\
+    \lambda_{y21} & \lambda_{y22} & \dots & \lambda_{y2m} & 0_{21} & 0_{22} & \dots & 0_{2p} & 0_{21} & 0_{22} & \dots & 0_{2q} \\
+     \vdots &  \vdots  &  \ddots &  \vdots  & \vdots & \vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots  \\
+    \lambda_{yq1} & \lambda_{yq2} & \dots & \lambda_{yqm} & 0_{q1} & 0_{q2} & \dots & 0_{qp} & 0_{q1} & 0_{q2} & \dots & 0_{qq} \\
+\end{bmatrix}$
+$\begin{bmatrix}
+    \eta_{1} \\
+    \eta_{2} \\
+    \vdots \\
+    \eta_{m} \\
+    x_{1} \\
+    x_{2} \\
+    \vdots \\
+    x_{p} \\
+    y_{1} \\
+    y_{2} \\
+    \vdots \\
+    y_{q}
+\end{bmatrix}$
+$+$
+$\begin{bmatrix}
+    \gamma_{11} & \gamma_{12} & \dots & \gamma_{1n} & 1 & 0_{12} & \dots & 0_{1m} & 0_{11} & 0_{12} & \dots & 0_{1p} & 0_{11} & 0_{12} & \dots & 0_{1q} \\
+    \gamma_{21} & \gamma_{22} & \dots & \gamma_{2n} & 0_{21} & 1 & \dots & 0_{2m} & 0_{21} & 0_{22} & \dots & 0_{2p} & 0_{21} & 0_{22} & \dots & 0_{2q} \\
+    \vdots &  \vdots  &  \ddots &  \vdots  & \vdots & \vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots  \\
+    \gamma_{m1} & \gamma_{m2} & \dots & \gamma_{mn} & 0_{m1} & 0_{m2} & \dots & 1 & 0_{m1} & 0_{m2} & \dots & 0_{mq} & 0_{m1} & 0_{m2} & \dots & 0_{mq} \\
+    \lambda_{x11} & \lambda_{x12} & \dots & \lambda_{x1n} & 0_{11} & 0_{12} & \dots & 0_{1m} & 1 & 0_{22} & \dots & 0_{1p} & 0_{11} & 0_{12} & \dots & 0_{1q}\\
+    \lambda_{x21} & \lambda_{x22} & \dots & \lambda_{x2n} & 0_{21} & 0_{22} & \dots & 0_{2m} & 0_{21} & 1 & \dots & 0_{2p} & 0_{21} & 0_{22} & \dots & 0_{2q}\\
+     \vdots &  \vdots  &  \ddots &  \vdots  & \vdots & \vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots  \\
+    \lambda_{xp1} & \lambda_{xp2} & \dots & \lambda_{xpn} & 0_{p1} & 0_{p2} & \dots & 0_{pm} & 0_{p1} & 0_{p2} & \dots & 1  & 0_{p1} & 0_{p2} & \dots & 0_{pq}\\
+    0_{11} & 0_{12} & \dots & 0_{1n} & 0_{11} & 0_{12} & \dots & 0_{1m} & 0_{11} & 0_{12} & \dots & 0_{1p} & 1 & 0_{22} & \dots & 0_{1q} \\
+    0_{21} & 0_{22} & \dots & 0_{2n} & 0_{21} & 0_{22} & \dots & 0_{2m} & 0_{21} & 0_{22} & \dots & 0_{2p} & 0_{21} & 1 & \dots & 0_{1q}\\
+     \vdots &  \vdots  &  \ddots &  \vdots  & \vdots & \vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots &\vdots &\vdots & \ddots & \vdots \\
+    0_{q1} & 0_{q2} & \dots & 0_{qn} & 0_{q1} & 0_{q2} & \dots & 0_{qm} & 0_{q1} & 0_{q2} & \dots & 0_{qp} & 0_{q1} & 0_{q2} & \dots & 1 \\
+\end{bmatrix}$
+$\begin{bmatrix}
+    \xi_{1} \\
+    \xi_{2} \\
+    \vdots \\
+    \xi_{n} \\
+    \zeta{1} \\
+    \zeta{2} \\
+    \vdots \\
+    \zeta{m} \\
+    \delta{1} \\
+    \delta{2} \\
+    \vdots \\
+    \delta{p} \\
+    \epsilon{1} \\
+    \epsilon{2} \\
+    \vdots \\
+    \epsilon{q}
+\end{bmatrix}$
+
+$\begin{bmatrix}
+    \eta_{m \times 1} \\
+    X_{p \times 1} \\
+    Y_{q \times 1} \\
+\end{bmatrix}$
+=
+$\left[
+\begin{array}{c|c|c}
+B_{m \times m} & 0_{m \times p} & 0_{m \times q}\\
+\hline
+0_{p \times m} & 0_{p \times p} & 0_{p \times q}\\
+\hline
+\Lambda_{y_{q \times m}} & 0_{q \times p} & 0_{q \times q} 
+\end{array}
+\right]$
+$\begin{bmatrix}
+    \eta_{m \times 1} \\
+    X_{p \times 1} \\
+    Y_{q \times 1} \\
+\end{bmatrix}$
+$+$
+$\left[
+\begin{array}{c|c|c|c}
+\Gamma_{m \times n} & I_{m \times m} & 0_{m \times p} & 0_{m \times q}\\
+\hline
+\Lambda_{x_{p \times n}} & 0_{p \times m} & I_{p \times p} & 0_{p \times q}\\
+\hline
+0_{q \times n} & 0_{q \times m} & 0_{q \times p} & I_{q \times q}\\
+\end{array}
+\right]$
+$\begin{bmatrix}
+    \xi_{n \times 1} \\
+    \zeta_{m \times 1} \\
+    \delta_{p \times 1} \\
+    \epsilon_{q \times 1} \\
+\end{bmatrix}$
+
+\newpage
+
+# References
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
