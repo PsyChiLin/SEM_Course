@@ -11,7 +11,7 @@ Please represent the Jöreskog-Keesing-Wiley model (JKW model) in terms of the B
 ## The Answers
 The answers are organized as follow. I first present the assumptions and the representations of the JKW model, followed by the expressions of the BW model. Then, I use the elements, indulging the equations and the covariance matrices, in the JKW model to show how to represent the JKW model in terms of the BW model.
 
-### The JKW model
+## The JKW model
 In the JKW model, let $Y$ and $X$ be the deviation scores from means, where $Y$ vector has $p$ variables and $X$ vector has $q$ variables. Let $\eta$ be the vector of endogenous latent variables, which has $m$ variables, and $\xi$ be the vector of exogenous latent variables, which has $n$ variables. Let $\zeta$, $\delta$ and $\epsilon$ be the the vectors of disturbances ($m$ variables), unique factors of $X$ ($q$ variables), and unique factors of $Y$ ($p$ variables) respectively. Since $Y$ and $X$ are the deviation scores from means, we have 
 $$E(X) = 0 ; E(Y) = 0$$, and we further assume 
 $$E(\zeta) = 0;E(\delta) = 0;E(\epsilon) = 0$$
@@ -26,13 +26,13 @@ $$\Psi = COV(\zeta)$$
 $$\Theta_{\epsilon} = COV(\epsilon)$$
 $$\Theta_{\delta} = COV(\delta)$$
 
-### The BW model
+## The BW model
 In the BW model, the representations can be reduced to a single equation. Let $\xi^*$ be the vector of independent variables and  $\eta^*$ be the vector of dependent variables. All variables are deviations from means. Then the relationship between $\xi^*$ and $\eta^*$ can be expressed as 
 $$\eta^* = B^*\eta^* + \Gamma^*\xi^*$$
 with the definition of covariance matrix
 $$\Phi^* = COV(\xi^*)$$
 
-### Represent the JKW model in terms of the BW model
+## Represent the JKW model in terms of the BW model
 According to the definition given above, we can represent the JKW model using the BW model. First of all, we have $$\eta^* = B^*\eta^* + \Gamma^*\xi^*$$ in the BW model.
 $\eta$, $X$ & $Y$ can be regarded as the dependent variables in $\eta^*$, $\zeta$, $\epsilon$, & $\delta$ can be regarded as the independent variables in $\xi^*$, $B$ & $\Lambda_{Y}$ can be regarded as the coefficients in $B^*$, and $\Gamma$ & $\Lambda_{X}$ can be regarded as the coefficients in $\Gamma^*$. Thus, we can express them by the matrices
 
@@ -249,5 +249,5 @@ $$
 
 where the covariance structures of these two models are similar. 
 
-### Discussion
+## Discussion
 In those representations, it is shown that either the JKW model can be exactly represented by the BW model. Also, as shown in above matrices, there are several zero matrices when elements of the JKW models are used in support of the BW model, implying that the JKW model has much more constraints relative to the BW model. For example, in the BW model, the relationship between $\delta$ and $\epsilon$ can be specified in $\Phi^*$; rather, the JKW model directly assumes that $\epsilon$, $\delta$ & $\zeta$ are mutually uncorrelated. Therefore, using the BW model, we can understand more relationships, which might not be able to directly explore in the JKW model. It is also the major reason why we need an alternative representation than the JKW model.
