@@ -1,44 +1,40 @@
 ---
-title: 'Home Work 2'
-authors:
-- affiliation: 1
-  name: Chi-Lin Yu
+title: 'HomeWork 2'
+author: Chi-Lin Yu (R05227101)
 output: pdf_document
-affiliations:
-- index: 1
-  name: Department of Psychology, National Taiwan University, Taiwan
+
 ---
-# HW2 : Represent the JKW model in terms of the BW model.
 
+## Homework 2
+Please represent the Jöreskog-Keesing-Wiley model (JKW model) in terms of the Bentler-Weeks model (BW model). In other words, what form of the matrices in the BW model will give the JKW model ? The equations and the covariance matrices should be included.
 
+## The Answers
+The answers are organized as follow. I first present the assumptions and the representations of the JKW model, followed by the expressions of the BW model. Then, I use the elements, indulging the equations and the covariance matrices, in the JKW model to show how to represent the JKW model in terms of the BW model.
 
-## JKW model
-In the JKW model, let $Y$ and $X$ be the deviation scores from means, where $Y$ vector has $p$ variables and $X$ vector has $q$ variables. Let $\eta$ be the vector of endogenous latent variables, which has $m$ variables, and $\xi$ be the vector of exogenous latent variables, which has $n$ variables. Let $\zeta$, $\delta$ and $\epsilon$ be the the vectors of distrubances, unique factors of $X$, and unique factors of $Y$ respectively.
-Thus, we have 
+### The JKW model
+In the JKW model, let $Y$ and $X$ be the deviation scores from means, where $Y$ vector has $p$ variables and $X$ vector has $q$ variables. Let $\eta$ be the vector of endogenous latent variables, which has $m$ variables, and $\xi$ be the vector of exogenous latent variables, which has $n$ variables. Let $\zeta$, $\delta$ and $\epsilon$ be the the vectors of disturbances ($m$ variables), unique factors of $X$ ($q$ variables), and unique factors of $Y$ ($p$ variables) respectively. Since $Y$ and $X$ are the deviation scores from means, we have 
 $$E(X) = 0 ; E(Y) = 0$$, and we further assume 
 $$E(\zeta) = 0;E(\delta) = 0;E(\epsilon) = 0$$
-Also, there are some assumptions of no correlations between vectors. That is, $\epsilon$ is uncorrelated with $\eta$ & $\xi$, $\delta$ is uncorrelated with $\eta$ & $\xi$, $\xi$ is uncorrelated with $\zeta$, and $\epsilon$, $\delta$ & $\zeta$ are muually uncorrelated.
-
-Most of all, there are two important models in JKW model, including the *structural model* and the *measuement model*. The structural model can be represented as 
-$$\eta_{m \times 1} = B_{m \times m}\eta_{m \times 1} + \Gamma_{m \times n}\xi_{n \times 1} + \zeta_{m \times 1}$$, and the measurment model can be represented as 
+Also, there are some assumptions of no correlations between vectors. That is, $\epsilon$ is uncorrelated with $\eta$ & $\xi$, $\delta$ is uncorrelated with $\eta$ & $\xi$, $\xi$ is uncorrelated with $\zeta$, and $\epsilon$, $\delta$ & $\zeta$ are mutually uncorrelated. Most of all, there are two important models in JKW model, including the *structural model* and the *measurement model*. The structural model can be represented as 
+$$\eta_{m \times 1} = B_{m \times m}\eta_{m \times 1} + \Gamma_{m \times n}\xi_{n \times 1} + \zeta_{m \times 1}$$, and the measurement model can be represented as 
 $$Y_{p \times 1} = \Lambda_{Y_{p \times m}}\eta_{m \times 1} + \epsilon_{p \times 1}$$
 $$X_{q \times 1} = \Lambda_{X_{q \times n}}\xi_{n \times 1} + \delta_{q \times 1}$$.
 
-Further define 4 corvariance matrix for exoegenous variables.
+Further define 4 covariance matrix for exogenous variables.
 $$\Phi = COV(\xi)$$
 $$\Psi = COV(\zeta)$$
 $$\Theta_{\epsilon} = COV(\epsilon)$$
 $$\Theta_{\delta} = COV(\delta)$$
 
-## BW model
-In the BW model, the representations can be reduced to a single equation. Let $\xi^*$ be the vector of independent variables and  $\eta^*$ be the vector of dependent variables. And all variables are deviations from means. Then the relationship between $\xi^*$ and $\eta^*$ can be expressed as 
+### The BW model
+In the BW model, the representations can be reduced to a single equation. Let $\xi^*$ be the vector of independent variables and  $\eta^*$ be the vector of dependent variables. All variables are deviations from means. Then the relationship between $\xi^*$ and $\eta^*$ can be expressed as 
 $$\eta^* = B^*\eta^* + \Gamma^*\xi^*$$
-with the definition of corvariance matrix
+with the definition of covariance matrix
 $$\Phi^* = COV(\xi^*)$$
 
-## Represent the JKW model in terms of the BW model
-According to the definiation given above, we can express the JKW model using the BW model. First of all, we have $$\eta^* = B^*\eta^* + \Gamma^*\xi^*$$ in the BW model.
-$\eta$, $X$ & $Y$ can be regarded as the dependent variables in $\eta^*$, $\zeta$, $\epsilon$, & $\delta$ can be regarded as the independent variables in $\xi^*$, $B$ & $\Lambda_{Y}$ can be regarded as the coeficients in $B^*$, and $\Gamma$ & $\Lambda_{X}$ can be regarded as the coeficients in $\Gamma^*$. Thus, we can express them by the matrices
+### Represent the JKW model in terms of the BW model
+According to the definition given above, we can represent the JKW model using the BW model. First of all, we have $$\eta^* = B^*\eta^* + \Gamma^*\xi^*$$ in the BW model.
+$\eta$, $X$ & $Y$ can be regarded as the dependent variables in $\eta^*$, $\zeta$, $\epsilon$, & $\delta$ can be regarded as the independent variables in $\xi^*$, $B$ & $\Lambda_{Y}$ can be regarded as the coefficients in $B^*$, and $\Gamma$ & $\Lambda_{X}$ can be regarded as the coefficients in $\Gamma^*$. Thus, we can express them by the matrices
 
 \setcounter{MaxMatrixCols}{20}
 
@@ -120,7 +116,8 @@ $\begin{bmatrix}
     \vdots \\
     \epsilon{p}
 \end{bmatrix}$
-Futhermore, the representations can also be reduced to the matrices with several blocks 
+
+The representations can also be reduced to the matrices with several blocks 
 according to the expressions in the JKW model. That is, 
 
 $$\begin{bmatrix}
@@ -167,7 +164,7 @@ B_{m \times m} & 0_{m \times q} & 0_{m \times p}\\
     \epsilon_{p \times 1} \\
 \end{bmatrix}$$
 
-We can further reduce the representations to 
+To simplify the demonstrations, we further reduce the representations to 
 
 \begin{equation}
 \begin{bmatrix}
@@ -209,7 +206,7 @@ We can further reduce the representations to
 \label{eq:myeqn}
 \end{equation}
 
-And when we re-write the BW model in greater details as \eqref{eq:myeqn2} below.
+Also we re-write the BW model in greater details as \eqref{eq:myeqn2} below.
 
 \begin{equation}
 \eta^*_{(m+q+p) \times 1} = B^*_{(m+q+p) \times (m+q+p)}\eta^*_{(m+q+p) \times 1} + \Gamma^*_{(m+q+p) \times (n+m+q+p)}\xi^*_{(n+m+q+p) \times 1}
@@ -233,7 +230,7 @@ can also be expressed by using $\Phi$, $\Psi$, $\Theta_{\epsilon}$ and $\Theta_{
 \label{eq:myeqn3}
 \end{equation}
 
-we can show that 
+we can demonstrated that 
 $$
 \Phi^* = 
 COV(\xi^*) =
@@ -250,3 +247,7 @@ COV(\xi^*) =
 \right]
 $$
 
+where the covariance structures of these two models are similar. 
+
+### Discussion
+In those representations, it is shown that either the JKW model can be exactly represented by the BW model. Also, as shown in above matrices, there are several zero matrices when elements of the JKW models are used in support of the BW model, implying that the JKW model has much more constraints relative to the BW model. For example, in the BW model, the relationship between $\delta$ and $\epsilon$ can be specified in $\Phi^*$; rather, the JKW model directly assumes that $\epsilon$, $\delta$ & $\zeta$ are mutually uncorrelated. Therefore, using the BW model, we can understand more relationships, which might not be able to directly explore in the JKW model. It is also the major reason why we need an alternative representation than the JKW model.
