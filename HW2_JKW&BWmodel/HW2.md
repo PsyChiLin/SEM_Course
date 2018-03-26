@@ -213,11 +213,47 @@ Also we re-write the BW model in greater details as \eqref{eq:myeqn2} below.
 \label{eq:myeqn2}
 \end{equation}
 
-We can find that \eqref{eq:myeqn} and \eqref{eq:myeqn2} are exactly the same, where \eqref{eq:myeqn} is the representations of the JKW model in terms of \eqref{eq:myeqn2}, the BW model.
+where
+\begin{equation}
+\eta^* = \begin{bmatrix}
+    \eta \\
+    X \\
+    Y \\
+\end{bmatrix};
+B^* = \left[\begin{array}{@{}c|c@{}}
+    \begin{matrix}
+    B \\
+    0 \\
+    \Lambda_{y}
+    \end{matrix} 
+    & 0
+\end{array}
+\right];
+\Gamma^* = 
+\left[\begin{array}{@{}c|c@{}}
+    \begin{matrix}
+    \Gamma \\
+    \Lambda_{x} \\
+    0
+    \end{matrix} 
+    & I
+\end{array}
+\right];
+\xi^* = 
+\begin{bmatrix}
+    \xi \\
+    \zeta \\
+    \delta \\
+    \epsilon \\
+\end{bmatrix}
+\label{eq:myeqn4}
+\end{equation}.
+
+According to \eqref{eq:myeqn4}, we can find that \eqref{eq:myeqn} and \eqref{eq:myeqn2} are exactly the same, where \eqref{eq:myeqn} is the representations of the JKW model in terms of \eqref{eq:myeqn2}, the BW model.
 
 In addition, the covariance matrix in the BW model
 $$\Phi^* = COV(\xi^*)$$
-can also be expressed by using $\Phi$, $\Psi$, $\Theta_{\epsilon}$ and $\Theta_{\delta}$ in the JKW model. Since $\zeta$, $\epsilon$, & $\delta$ can be regarded as the independent variables in $\xi^*$ as shown in \eqref{eq:myeqn3},
+can also be expressed by using $\Phi$, $\Psi$, $\Theta_{\epsilon}$ and $\Theta_{\delta}$ in the JKW model. Since $\zeta$, $\epsilon$, & $\delta$ can be regarded as the independent variables in $\xi^*$ as shown in \eqref{eq:myeqn3} (which is the same representation in part of \eqref{eq:myeqn4}),
 
 \begin{equation}
 \xi^*_{(n+m+q+p)} = 
@@ -231,7 +267,7 @@ can also be expressed by using $\Phi$, $\Psi$, $\Theta_{\epsilon}$ and $\Theta_{
 \end{equation}
 
 we can demonstrated that 
-$$
+\begin{equation}
 \Phi^* = 
 COV(\xi^*) =
 \left[
@@ -245,9 +281,16 @@ COV(\xi^*) =
 0 & 0 & 0 & \Theta_{\epsilon}
 \end{array}
 \right]
-$$
+\label{eq:myeqn5}
+\end{equation}
 
 where the covariance structures of these two models are similar. 
 
+Also we derive the implied covariance matrix of the BW model,
+$$
+E_{\eta^*\eta^{*\prime}}(\Theta) = E(\eta^*\eta^{*\prime}) = (I-B^*)^{-1}\Gamma^*\Phi^*\Gamma^{*\prime}(I-B^*)^{-1\prime}
+$$
+where each element can be demonstrated by using the JKW model as shown in \eqref{eq:myeqn4} and \eqref{eq:myeqn5}.
+
 ## Discussion
-In those representations, it is shown that either the JKW model can be exactly represented by the BW model. Also, as shown in above matrices, there are several zero matrices when elements of the JKW models are used in support of the BW model, implying that the JKW model has much more constraints relative to the BW model. For example, in the BW model, the relationship between $\delta$ and $\epsilon$ can be specified in $\Phi^*$; rather, the JKW model directly assumes that $\epsilon$, $\delta$ & $\zeta$ are mutually uncorrelated. Therefore, using the BW model, we can understand more relationships, which might not be able to directly explore in the JKW model. It is also the major reason why we need an alternative representation than the JKW model.
+In those representations, it is shown that either the JKW model can be exactly represented in terms of the BW model. Also, as shown in above matrices, there are several zero matrices or identity matrices when elements of the JKW models are used in support of the BW model, implying that the JKW model has much more constraints relative to the BW model. For example, in the BW model, the relationship between $\delta$ and $\epsilon$ can be specified in $\Phi^*$; rather, the JKW model directly assumes that $\epsilon$, $\delta$ & $\zeta$ are mutually uncorrelated. Also, the relationship between $X$ and $Y$ can also be directly specified in $B^*$. Therefore, using the BW model, we can understand more relationships, which might not be able to directly explore in the JKW model. It is also the major reason why we need an alternative representation than the JKW model.
