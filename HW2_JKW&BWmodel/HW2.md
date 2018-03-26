@@ -288,9 +288,9 @@ where the covariance structures of these two models are similar.
 
 Also we derive the implied covariance matrix of the BW model,
 $$
-E_{\eta^*\eta^{*\prime}}(\Theta) = E(\eta^*\eta^{*\prime}) = (I-B^*)^{-1}\Gamma^*\Phi^*\Gamma^{*\prime}(I-B^*)^{-1\prime}
+\Sigma_{\eta^*\eta^{*\prime}}(\Theta) = E(\eta^*\eta^{*\prime}) = (I-B^*)^{-1}\Gamma^*\Phi^*\Gamma^{*\prime}(I-B^*)^{-1\prime}
 $$
-where each element can be demonstrated by using the JKW model as shown in \eqref{eq:myeqn4} and \eqref{eq:myeqn5}.
+where each element can be demonstrated by using the JKW model as shown in \eqref{eq:myeqn4} and \eqref{eq:myeqn5}. Note that the expression is as same as the equation (2.6) in the article *Bentler, P. M., & Weeks, D. G. (1980). Linear structural equations with latent variables. Psychometrika, 45(3), 289-308* ($\Sigma = GB^{-1}\Gamma\Phi\Gamma^{\prime}B^{-1\prime}G^{\prime}$). There are concetually the same but have slightly differences in the expressions. 
 
 ## Discussion
 In those representations, it is shown that either the JKW model can be exactly represented in terms of the BW model. Also, as shown in above matrices, there are several zero matrices or identity matrices when elements of the JKW models are used in support of the BW model, implying that the JKW model has much more constraints relative to the BW model. For example, in the BW model, the relationship between $\delta$ and $\epsilon$ can be specified in $\Phi^*$; rather, the JKW model directly assumes that $\epsilon$, $\delta$ & $\zeta$ are mutually uncorrelated. Also, the relationship between $X$ and $Y$ can also be directly specified in $B^*$. Therefore, using the BW model, we can understand more relationships, which might not be able to directly explore in the JKW model. It is also the major reason why we need an alternative representation than the JKW model.
