@@ -132,7 +132,7 @@ In \eqref{eq:eq12}, \eqref{eq:eq13}, and \eqref{eq:eq14}, we have expressed each
 We can consider the CFA part and assume that all the parameters have non-zero values. By applying the two-indicator rule, it is found that there are two non-zero loadings for each factor and all of the observed variables ($x$) are only influenced by one factor. Also, there is no zero element in $\Phi$, suggesting these two factors somhow have the relationship between each other. Likewise, each variance of $\delta$ is not correlated with others. According to these criteria, we have found the the CFA part is identified. Since the present model does not have the structural part, we can claim that this model is identified.
 
 ## How about if $\xi_{1}$ $\rightarrow$ $\xi_{2}$ instead? Repeat 1 & 2.
-We can clearly see that the $\sum$ is still the same but a new equation is generated to indicate the direct effect from $\xi_{1}$ $\rightarrow$ $\xi_{2}$. Indeed, $\xi_{2}$ should be represented as $\eta_{1}$ under the representation of the JKW model. Thus, we have 
+We can clearly see that the $\sum$ is still the same but a new equation is generated to indicate the direct effect from $\xi_{1}$ $\rightarrow$ $\xi_{2}$. Indeed, $\xi_{2}$ should be represented as $\eta_{1}$ under the representation of the JKW model. (Note that we still use $x$ rather than $y$ for consistent demonstrations). Thus, we have 
 \begin{equation}
 \eta_{1} = \gamma_{11}\xi_{1} + \zeta_{1}
 \label{eq:eq15}
@@ -363,13 +363,17 @@ Moreover, via substituting \eqref{eq:Q2eq23} into \eqref{eq:Q2eq1} ~ \eqref{eq:Q
 Var(\epsilon_{1}) = \sigma_{1}^2 - \dfrac{\sigma_{12}\sigma_{14}}{\sigma_{24}};
 Var(\epsilon_{2}) = \sigma_{2}^2 - \dfrac{\sigma_{24}\sigma_{12}}{\sigma_{14}};
 Var(\epsilon_{3}) = \sigma_{3}^2 - \dfrac{\sigma_{34}^2\sigma_{12}}{\sigma_{14}\sigma_{24}}
-Var(\epsilon_{4}) = \sigma_{4}^2 - \dfrac{\sigma_{45}\sigma_{14}}{\sigma_{15}}
-Var(\epsilon_{5}) = \sigma_{5}^2 - \dfrac{\sigma_{15}\sigma_{45}}{\sigma_{14}}
-Var(\epsilon_{6}) = \sigma_{6}^2 - \dfrac{\sigma_{16}^2\sigma_{45}}{\sigma_{14}\sigma_{15}}
 \label{eq:Q2eq24}
 \end{equation}
 
-In \eqref{eq:Q2eq22} and \eqref{eq:Q2eq24}, we can express $\lambda$s and $Var(\epsilon)$ in terms of the $\sigma$s.
+\begin{equation}
+Var(\epsilon_{4}) = \sigma_{4}^2 - \dfrac{\sigma_{45}\sigma_{14}}{\sigma_{15}};
+Var(\epsilon_{5}) = \sigma_{5}^2 - \dfrac{\sigma_{15}\sigma_{45}}{\sigma_{14}};
+Var(\epsilon_{6}) = \sigma_{6}^2 - \dfrac{\sigma_{16}^2\sigma_{45}}{\sigma_{14}\sigma_{15}}
+\label{eq:Q2eq25}
+\end{equation}
+
+In \eqref{eq:Q2eq22}, \eqref{eq:Q2eq24} and \eqref{eq:Q2eq25}, we can express $\lambda$s and $Var(\epsilon)$ in terms of the $\sigma$s.
 
 ## Discussion
-Although we have expressed many available parameters using the elements in $\sum$ as shown in  \eqref{eq:Q2eq22} and \eqref{eq:Q2eq24}, there are still 4 parameters that we have yet derived (and cannot be drived in fact). Those are $\gamma_{11}^2$, $\psi_{11}$, $\gamma_{21}^2$ and $\psi_{22}$. It seems that $\gamma_{11}^2$ & $\psi_{11}$ are always combined and  $\gamma_{21}^2$ & $\psi_{22}$ are always combined. It is impossible to distinguish these four parameters in the present model, thus causing these four parameters to be unidentified. However, a model is identified if and only if all its parameters are identified. Therefore, this model is not identified. In another viewpoint, when we only consider the structural part of this model, the model can be regarded as a two indicator model (one factor with two indicators). It is obvious that a two indicator model will not be identidied. In brief, we can conclude that this model is an unidentified one.  
+Although we have expressed many available parameters using the elements in $\sum$ as shown in  \eqref{eq:Q2eq22}, \eqref{eq:Q2eq24} and \eqref{eq:Q2eq25}, there are still 4 parameters that we have yet derived (and cannot be drived in fact). Those are $\gamma_{11}^2$, $\psi_{11}$, $\gamma_{21}^2$ and $\psi_{22}$. It seems that $\gamma_{11}^2$ & $\psi_{11}$ are always combined and  $\gamma_{21}^2$ & $\psi_{22}$ are always combined. It is impossible to distinguish these four parameters in the present model, thus causing these four parameters to be unidentified. However, a model is identified if and only if all its parameters are identified. Therefore, this model is not identified. In another viewpoint, when we only consider the structural part of this model, the model can be regarded as a two indicator model (one factor with two indicators). It is obvious that a two indicator model will not be identidied. In brief, we can conclude that this model is an unidentified one.  
