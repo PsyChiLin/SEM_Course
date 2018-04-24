@@ -50,7 +50,7 @@ semPaths(fit_BM,what = "col",whatLabels = "std",
 dev.off()
 
 ## MM model
-MM1 <- '
+MM <- '
     # latent variable definitions
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
     FS  =~ 1 * WF + IL + SF
@@ -60,12 +60,12 @@ MM1 <- '
     SP ~ EVP
 '
 # Fit the model using ML estimator
-fit_MM1 <- sem(MM1, estimator = "ML",
+fit_MM <- sem(MM, estimator = "ML",
               #likelihood = "wishart",
               sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_MM1, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MM1, standardized=TRUE, fit.measures=T), file = "fit_MM1.txt")
+summary(fit_MM, standardized=TRUE, fit.measures=T)
+capture.output(summary(fit_MM, standardized=TRUE, fit.measures=T), file = "fit_MM.txt")
 # Figure
 # pdf(file = "Fig3_MM1_Demo.pdf",width = 7, height = 7)
 # semPaths(fit_MM1,what = "col",
@@ -74,7 +74,7 @@ capture.output(summary(fit_MM1, standardized=TRUE, fit.measures=T), file = "fit_
 #          style = "lisrel",layout = "circle")
 # dev.off()
 pdf(file = "Fig_MM_Rst.pdf",width = 7, height = 7)
-semPaths(fit_MM1,what = "col",whatLabels = "std",
+semPaths(fit_MM,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -95,7 +95,7 @@ fit_MM2 <- sem(MM2, estimator = "ML",
                sample.nobs = N, sample.cov = dtacov)
 # Show the result
 summary(fit_MM2, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MM2, standardized=TRUE, fit.measures=T), file = "fit_MM2.txt")
+capture.output(summary(fit_MM2, standardized=TRUE, fit.measures=T), file = "fit_MMind.txt")
 # Figure
 # pdf(file = "Fig5_MM2_Demo.pdf",width = 7, height = 7)
 # semPaths(fit_MM2,what = "col",
@@ -152,4 +152,78 @@ dev.off()
 # summary(fit_Str, standardized=TRUE, fit.measures=T)
 # capture.output(summary(fit_Str, standardized=TRUE, fit.measures=T), file = "fit_BM.txt")
 
-#
+###### Fully Mediated Model
+MMfull <- '
+# latent variable definitions
+EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
+FS  =~ 1 * WF + IL + SF
+SP  =~ 1 * PSCL
+# regressions
+FS ~ SP
+SP ~ EVP
+'
+# Fit the model using ML estimator
+fit_MMfull <- sem(MMfull, estimator = "ML",
+               #likelihood = "wishart",
+               sample.nobs = N, sample.cov = dtacov)
+# Show the result
+summary(fit_MMfull, standardized=TRUE, fit.measures=T)
+capture.output(summary(fit_MMfull, standardized=TRUE, fit.measures=T), file = "fit_MMfull.txt")
+# Figure
+pdf(file = "Fig_MMfull_Rst.pdf",width = 7, height = 7)
+semPaths(fit_MMfull,what = "col",whatLabels = "std",
+         nDigits = 3,
+         groups = "latents",bg = "white", 
+         style = "lisrel")
+dev.off()
+
+###### Fully Mediated Model: Two Stage
+MMfull_CFA <- '
+    # latent variable definitions
+    EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
+    FS  =~ 1 * WF + IL + SF
+    SP  =~ 1 * PSCL
+'
+# Fit the model using ML estimator
+fit_MMfull_CFA <- sem(MMfull_CFA, estimator = "ML",
+                  #likelihood = "wishart",
+                  sample.nobs = N, sample.cov = dtacov)
+# Show the result
+summary(fit_MMfull_CFA, standardized=TRUE, fit.measures=T)
+capture.output(summary(fit_MMfull_CFA, standardized=TRUE, fit.measures=T), file = "fit_MMfull_CFA.txt")
+# Figure
+pdf(file = "Fig_MMfull_CFA_Rst.pdf",width = 7, height = 7)
+semPaths(fit_MMfull_CFA,what = "col",whatLabels = "std",
+         nDigits = 3,
+         groups = "latents",bg = "white", 
+         style = "lisrel")
+dev.off()
+
+
+
+Strdta <- '
+89.645,
+3.331,1.611,
+30.711,2.962,32.057
+'
+StrCov <- getCov(Strdta, names=c("EVP","FS", "SP"))
+MMfull_STR <- '
+    # regressions
+FS ~ SP
+SP ~ EVP
+'
+# Fit the model using ML estimator
+fit_MMfull_STR <- sem(MMfull_STR, estimator = "ML",
+                      #likelihood = "wishart",
+                      sample.nobs = N, sample.cov = StrCov)
+# Show the result
+summary(fit_MMfull_STR, standardized=TRUE, fit.measures=T)
+capture.output(summary(fit_MMfull_STR, standardized=TRUE, fit.measures=T), file = "fit_MMfull_STR.txt")
+# Figure
+pdf(file = "Fig_MMfull_STR_Rst.pdf",width = 7, height = 7)
+semPaths(fit_MMfull_STR,what = "col",whatLabels = "std",
+         nDigits = 3,
+         #groups = "latents",
+         bg = "white", 
+         style = "lisrel")
+dev.off()
