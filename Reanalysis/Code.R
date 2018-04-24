@@ -42,7 +42,7 @@ capture.output(summary(fit_BM, standardized=TRUE, fit.measures=T), file = "fit_B
 #          groups = "latents",bg = "white", 
 #          style = "lisrel",layout = "circle")
 # dev.off()
-pdf(file = "Fig2_BM_Rst.pdf",width = 7, height = 7)
+pdf(file = "Fig_BM_Rst.pdf",width = 7, height = 7)
 semPaths(fit_BM,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
@@ -73,7 +73,7 @@ capture.output(summary(fit_MM1, standardized=TRUE, fit.measures=T), file = "fit_
 #          groups = "latents",bg = "white", 
 #          style = "lisrel",layout = "circle")
 # dev.off()
-pdf(file = "Fig4_MM1_Rst.pdf",width = 7, height = 7)
+pdf(file = "Fig_MM_Rst.pdf",width = 7, height = 7)
 semPaths(fit_MM1,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
@@ -103,7 +103,7 @@ capture.output(summary(fit_MM2, standardized=TRUE, fit.measures=T), file = "fit_
 #          groups = "latents",bg = "white", 
 #          style = "lisrel",layout = "circle")
 # dev.off()
-pdf(file = "Fig6_MM2_Rst.pdf",width = 7, height = 7)
+pdf(file = "Fig_MMind_Rst.pdf",width = 7, height = 7)
 semPaths(fit_MM2,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
@@ -112,7 +112,6 @@ dev.off()
 
 ## MM2 & MM1 are two equ models
 
-# Two Step 
 CFApart <- '
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
     FS  =~ 1 * WF + IL + SF
@@ -126,9 +125,29 @@ fit_CFApart <- sem(CFApart, estimator = "ML",
 summary(fit_CFApart, standardized=TRUE, fit.measures=T)
 capture.output(summary(fit_CFApart, standardized=TRUE, fit.measures=T), file = "fit_CFApart.txt")
 
-pdf(file = "Fig7_CFApart_Rst.pdf",width = 7, height = 7)
+pdf(file = "Fig_CFA_Rst.pdf",width = 7, height = 7)
 semPaths(fit_CFApart,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
 dev.off()
+
+# Strdta <- '
+# 89.645,
+# 3.331,1.611,
+# 30.711,2.962,32.057
+# '
+# StrCov <- getCov(Strdta, names=c("EVP","FS", "SP"))
+# Str <- '
+#     # regressions
+#     FS ~ EVP + SP
+#     SP ~ EVP
+# '
+# fit_Str <- sem(Str, estimator = "ML",
+#               #likelihood = "wishart",
+#               sample.nobs = N, sample.cov = StrCov)
+# # Show the result
+# summary(fit_Str, standardized=TRUE, fit.measures=T)
+# capture.output(summary(fit_Str, standardized=TRUE, fit.measures=T), file = "fit_BM.txt")
+
+
