@@ -80,7 +80,7 @@ semPaths(fit_MM1,what = "col",whatLabels = "std",
          style = "lisrel")
 dev.off()
 
-## MM2 model : use PATH rather than LV
+## MM2 model : use Ind rather than LV
 MM2 <- '
     # latent variable definitions
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
@@ -110,7 +110,7 @@ semPaths(fit_MM2,what = "col",whatLabels = "std",
          style = "lisrel")
 dev.off()
 
-## MM2 & MM1 are two equ models
+## MMind & MM1 are two equ models
 
 CFApart <- '
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
@@ -132,6 +132,8 @@ semPaths(fit_CFApart,what = "col",whatLabels = "std",
          style = "lisrel")
 dev.off()
 
+## MMind & MM1 $ CFA are three equ models
+
 # Strdta <- '
 # 89.645,
 # 3.331,1.611,
@@ -150,4 +152,4 @@ dev.off()
 # summary(fit_Str, standardized=TRUE, fit.measures=T)
 # capture.output(summary(fit_Str, standardized=TRUE, fit.measures=T), file = "fit_BM.txt")
 
-
+#
