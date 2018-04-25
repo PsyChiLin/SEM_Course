@@ -1,0 +1,71 @@
+lavaan (0.5-23.1097) converged normally after  24 iterations
+
+  Number of observations                           200
+
+  Estimator                                         ML
+  Minimum Function Test Statistic                4.080
+  Degrees of freedom                                 7
+  P-value (Chi-square)                           0.771
+
+Model test baseline model:
+
+  Minimum Function Test Statistic              581.256
+  Degrees of freedom                                15
+  P-value                                        0.000
+
+User model versus baseline model:
+
+  Comparative Fit Index (CFI)                    1.000
+  Tucker-Lewis Index (TLI)                       1.011
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)              -1667.474
+  Loglikelihood unrestricted model (H1)      -1665.434
+
+  Number of free parameters                         14
+  Akaike (AIC)                                3362.947
+  Bayesian (BIC)                              3409.124
+  Sample-size adjusted Bayesian (BIC)         3364.770
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.000
+  90 Percent Confidence Interval          0.000  0.059
+  P-value RMSEA <= 0.05                          0.921
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.024
+
+Parameter Estimates:
+
+  Information                                 Expected
+  Standard Errors                             Standard
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  ETA1 =~                                                               
+    Y1                1.000                               1.015    0.818
+    Y2                1.163       NA                      1.181    0.857
+    Y3                0.875       NA                      0.888    0.816
+  ETA2 =~                                                               
+    Y4                1.000                               1.022    0.840
+    Y5                1.215       NA                      1.242    0.870
+    Y6                0.793       NA                      0.810    0.736
+  XI1 =~                                                                
+    ETA1              1.000                               0.546    0.546
+    ETA2              0.633       NA                      0.344    0.344
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .Y1                0.508       NA                      0.508    0.330
+   .Y2                0.503       NA                      0.503    0.265
+   .Y3                0.396       NA                      0.396    0.334
+   .Y4                0.435       NA                      0.435    0.294
+   .Y5                0.493       NA                      0.493    0.242
+   .Y6                0.554       NA                      0.554    0.458
+    ETA1              0.723       NA                      0.702    0.702
+    ETA2              0.920       NA                      0.882    0.882
+    XI1               0.307       NA                      1.000    1.000
+
