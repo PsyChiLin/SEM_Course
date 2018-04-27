@@ -21,10 +21,10 @@ str(dta)
 # Specify model
 model <- '
     # endo
-    ETA1 =~ 1*Y1 + Y2 + Y3
-    ETA2 =~ 1*Y4 + Y5 + Y6
+    ETA1 =~ 1*Y1 + start(0.2)* Y2 + start(0.2) * Y3
+    ETA2 =~ 1*Y4 + start(0.2)* Y5 + start(0.2) * Y6
     # regressions
-    XI1 =~  1 * ETA1 + ETA2
+    XI1 =~  1 * ETA1 + start(0.2)*ETA2
 '
 
 # Fit the model using ML estimator

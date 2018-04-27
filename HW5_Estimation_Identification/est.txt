@@ -6,13 +6,13 @@
 5  ETA2 =~   Y5 1.215 NA NA     NA       NA       NA
 6  ETA2 =~   Y6 0.793 NA NA     NA       NA       NA
 7   XI1 =~ ETA1 1.000  0 NA     NA        1        1
-8   XI1 =~ ETA2 0.633 NA NA     NA       NA       NA
+8   XI1 =~ ETA2 0.336 NA NA     NA       NA       NA
 9    Y1 ~~   Y1 0.508 NA NA     NA       NA       NA
 10   Y2 ~~   Y2 0.503 NA NA     NA       NA       NA
 11   Y3 ~~   Y3 0.396 NA NA     NA       NA       NA
 12   Y4 ~~   Y4 0.435 NA NA     NA       NA       NA
 13   Y5 ~~   Y5 0.493 NA NA     NA       NA       NA
 14   Y6 ~~   Y6 0.554 NA NA     NA       NA       NA
-15 ETA1 ~~ ETA1 0.723 NA NA     NA       NA       NA
-16 ETA2 ~~ ETA2 0.920 NA NA     NA       NA       NA
-17  XI1 ~~  XI1 0.307 NA NA     NA       NA       NA
+15 ETA1 ~~ ETA1 0.452 NA NA     NA       NA       NA
+16 ETA2 ~~ ETA2 0.978 NA NA     NA       NA       NA
+17  XI1 ~~  XI1 0.578 NA NA     NA       NA       NA

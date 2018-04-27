@@ -1,4 +1,4 @@
-lavaan (0.5-23.1097) converged normally after  24 iterations
+lavaan (0.5-23.1097) converged normally after  26 iterations
 
   Number of observations                           200
 
@@ -54,8 +54,8 @@ Latent Variables:
     Y5                1.215       NA                      1.242    0.870
     Y6                0.793       NA                      0.810    0.736
   XI1 =~                                                                
-    ETA1              1.000                               0.546    0.546
-    ETA2              0.633       NA                      0.344    0.344
+    ETA1              1.000                               0.749    0.749
+    ETA2              0.336       NA                      0.250    0.250
 
 Variances:
                    Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
@@ -65,7 +65,7 @@ Variances:
    .Y4                0.435       NA                      0.435    0.294
    .Y5                0.493       NA                      0.493    0.242
    .Y6                0.554       NA                      0.554    0.458
-    ETA1              0.723       NA                      0.702    0.702
-    ETA2              0.920       NA                      0.882    0.882
-    XI1               0.307       NA                      1.000    1.000
+    ETA1              0.452       NA                      0.439    0.439
+    ETA2              0.978       NA                      0.937    0.937
+    XI1               0.578       NA                      1.000    1.000
 
