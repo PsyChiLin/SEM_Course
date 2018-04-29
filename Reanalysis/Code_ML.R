@@ -29,21 +29,21 @@ BM1 <- '
     FS ~ EVP
 '
 # Fit the model using ML estimator
-fit_BM <- sem(BM1, estimator = "ML",
+fitML_BM <- sem(BM1, estimator = "ML",
            #likelihood = "wishart",
            sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_BM, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_BM, standardized=TRUE, fit.measures=T), file = "fit_BM.txt")
+summary(fitML_BM, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_BM, standardized=TRUE, fit.measures=T), file = "fitML_BM.txt")
 # Produce Figure
 # pdf(file = "Fig1_BM_Demo.pdf",width = 7, height = 7)
-# semPaths(fit_BM,what = "col",
+# semPaths(fitML_BM,what = "col",
 #          nDigits = 3,
 #          groups = "latents",bg = "white", 
 #          style = "lisrel",layout = "circle")
 # dev.off()
-pdf(file = "Fig_BM_Rst.pdf",width = 7, height = 7)
-semPaths(fit_BM,what = "col",whatLabels = "std",
+pdf(file = "Fig_BM_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_BM,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -60,21 +60,21 @@ MM <- '
     SP ~ EVP
 '
 # Fit the model using ML estimator
-fit_MM <- sem(MM, estimator = "ML",
+fitML_MM <- sem(MM, estimator = "ML",
               #likelihood = "wishart",
               sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_MM, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MM, standardized=TRUE, fit.measures=T), file = "fit_MM.txt")
+summary(fitML_MM, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_MM, standardized=TRUE, fit.measures=T), file = "fitML_MM.txt")
 # Figure
 # pdf(file = "Fig3_MM1_Demo.pdf",width = 7, height = 7)
-# semPaths(fit_MM1,what = "col",
+# semPaths(fitML_MM1,what = "col",
 #          nDigits = 3,
 #          groups = "latents",bg = "white", 
 #          style = "lisrel",layout = "circle")
 # dev.off()
-pdf(file = "Fig_MM_Rst.pdf",width = 7, height = 7)
-semPaths(fit_MM,what = "col",whatLabels = "std",
+pdf(file = "Fig_MM_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_MM,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -90,21 +90,21 @@ MM2 <- '
     PNS ~ EVP
 '
 # Fit the model using ML estimator
-fit_MM2 <- sem(MM2, estimator = "ML",
+fitML_MM2 <- sem(MM2, estimator = "ML",
                #likelihood = "wishart",
                sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_MM2, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MM2, standardized=TRUE, fit.measures=T), file = "fit_MMind.txt")
+summary(fitML_MM2, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_MM2, standardized=TRUE, fit.measures=T), file = "fitML_MMind.txt")
 # Figure
 # pdf(file = "Fig5_MM2_Demo.pdf",width = 7, height = 7)
-# semPaths(fit_MM2,what = "col",
+# semPaths(fitML_MM2,what = "col",
 #          nDigits = 3,
 #          groups = "latents",bg = "white", 
 #          style = "lisrel",layout = "circle")
 # dev.off()
-pdf(file = "Fig_MMind_Rst.pdf",width = 7, height = 7)
-semPaths(fit_MM2,what = "col",whatLabels = "std",
+pdf(file = "Fig_MMind_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_MM2,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -118,15 +118,15 @@ CFApart <- '
     SP  =~ 1 * PNS
 '
 # Fit the model using ML estimator
-fit_CFApart <- sem(CFApart, estimator = "ML",
+fitML_CFApart <- sem(CFApart, estimator = "ML",
                #likelihood = "wishart",
                sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_CFApart, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_CFApart, standardized=TRUE, fit.measures=T), file = "fit_CFApart.txt")
+summary(fitML_CFApart, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_CFApart, standardized=TRUE, fit.measures=T), file = "fitML_CFApart.txt")
 
-pdf(file = "Fig_CFA_Rst.pdf",width = 7, height = 7)
-semPaths(fit_CFApart,what = "col",whatLabels = "std",
+pdf(file = "Fig_CFA_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_CFApart,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -145,12 +145,12 @@ dev.off()
 #     FS ~ EVP + SP
 #     SP ~ EVP
 # '
-# fit_Str <- sem(Str, estimator = "ML",
+# fitML_Str <- sem(Str, estimator = "ML",
 #               #likelihood = "wishart",
 #               sample.nobs = N, sample.cov = StrCov)
 # # Show the result
-# summary(fit_Str, standardized=TRUE, fit.measures=T)
-# capture.output(summary(fit_Str, standardized=TRUE, fit.measures=T), file = "fit_BM.txt")
+# summary(fitML_Str, standardized=TRUE, fit.measures=T)
+# capture.output(summary(fitML_Str, standardized=TRUE, fit.measures=T), file = "fitML_BM.txt")
 
 ###### Fully Mediated Model
 MMfull <- '
@@ -163,15 +163,15 @@ FS ~ SP
 SP ~ EVP
 '
 # Fit the model using ML estimator
-fit_MMfull <- sem(MMfull, estimator = "ML",
+fitML_MMfull <- sem(MMfull, estimator = "ML",
                #likelihood = "wishart",
                sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_MMfull, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MMfull, standardized=TRUE, fit.measures=T), file = "fit_MMfull.txt")
+summary(fitML_MMfull, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_MMfull, standardized=TRUE, fit.measures=T), file = "fitML_MMfull.txt")
 # Figure
-pdf(file = "Fig_MMfull_Rst.pdf",width = 7, height = 7)
-semPaths(fit_MMfull,what = "col",whatLabels = "std",
+pdf(file = "Fig_MMfull_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_MMfull,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -185,15 +185,15 @@ MMfull_CFA <- '
     SP  =~ 1 * PNS
 '
 # Fit the model using ML estimator
-fit_MMfull_CFA <- sem(MMfull_CFA, estimator = "ML",
+fitML_MMfull_CFA <- sem(MMfull_CFA, estimator = "ML",
                   #likelihood = "wishart",
                   sample.nobs = N, sample.cov = dtacov)
 # Show the result
-summary(fit_MMfull_CFA, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MMfull_CFA, standardized=TRUE, fit.measures=T), file = "fit_MMfull_CFA.txt")
+summary(fitML_MMfull_CFA, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_MMfull_CFA, standardized=TRUE, fit.measures=T), file = "fitML_MMfull_CFA.txt")
 # Figure
-pdf(file = "Fig_MMfull_CFA_Rst.pdf",width = 7, height = 7)
-semPaths(fit_MMfull_CFA,what = "col",whatLabels = "std",
+pdf(file = "Fig_MMfull_CFA_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_MMfull_CFA,what = "col",whatLabels = "std",
          nDigits = 3,
          groups = "latents",bg = "white", 
          style = "lisrel")
@@ -213,15 +213,15 @@ FS ~ SP
 SP ~ EVP
 '
 # Fit the model using ML estimator
-fit_MMfull_STR <- sem(MMfull_STR, estimator = "ML",
+fitML_MMfull_STR <- sem(MMfull_STR, estimator = "ML",
                       #likelihood = "wishart",
                       sample.nobs = N, sample.cov = StrCov)
 # Show the result
-summary(fit_MMfull_STR, standardized=TRUE, fit.measures=T)
-capture.output(summary(fit_MMfull_STR, standardized=TRUE, fit.measures=T), file = "fit_MMfull_STR.txt")
+summary(fitML_MMfull_STR, standardized=TRUE, fit.measures=T)
+capture.output(summary(fitML_MMfull_STR, standardized=TRUE, fit.measures=T), file = "fitML_MMfull_STR.txt")
 # Figure
-pdf(file = "Fig_MMfull_STR_Rst.pdf",width = 7, height = 7)
-semPaths(fit_MMfull_STR,what = "col",whatLabels = "std",
+pdf(file = "Fig_MMfull_STR_RstML.pdf",width = 7, height = 7)
+semPaths(fitML_MMfull_STR,what = "col",whatLabels = "std",
          nDigits = 3,
          #groups = "latents",
          bg = "white", 
