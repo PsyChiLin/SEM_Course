@@ -15,7 +15,7 @@ lower <- '
 0.18,  0.21,  0.08,  0.11, 0.33, 0.52,  1
 0.11,  0.26, -0.05, -0.13, 0.11, 0.47, 0.47,1
 '
-dtacor <- getCov(lower, names=c("FM_TL","BM_TL", "FM_TI", "BM_TI","PSCL","WF","IL","SF"))
+dtacor <- getCov(lower, names=c("FM_TL","BM_TL", "FM_TI", "BM_TI","PNS","WF","IL","SF"))
 dtacov <- cor2cov(dtacor,c(17.3,17.1,8.4,7.5,5.7,1.7,2.1,2.0))
 # Define sample size
 N = 75
@@ -54,7 +54,7 @@ MM <- '
     # latent variable definitions
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
     FS  =~ 1 * WF + IL + SF
-    SP  =~ 1 * PSCL
+    SP  =~ 1 * PNS
     # regressions
     FS ~ EVP + SP
     SP ~ EVP
@@ -86,8 +86,8 @@ MM2 <- '
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
     FS  =~ 1 * WF + IL + SF
     # regressions
-    FS ~ EVP + PSCL
-    PSCL ~ EVP
+    FS ~ EVP + PNS
+    PNS ~ EVP
 '
 # Fit the model using ML estimator
 fit_MM2 <- sem(MM2, estimator = "ML",
@@ -115,7 +115,7 @@ dev.off()
 CFApart <- '
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
     FS  =~ 1 * WF + IL + SF
-    SP  =~ 1 * PSCL
+    SP  =~ 1 * PNS
 '
 # Fit the model using ML estimator
 fit_CFApart <- sem(CFApart, estimator = "ML",
@@ -157,7 +157,7 @@ MMfull <- '
 # latent variable definitions
 EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
 FS  =~ 1 * WF + IL + SF
-SP  =~ 1 * PSCL
+SP  =~ 1 * PNS
 # regressions
 FS ~ SP
 SP ~ EVP
@@ -182,7 +182,7 @@ MMfull_CFA <- '
     # latent variable definitions
     EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
     FS  =~ 1 * WF + IL + SF
-    SP  =~ 1 * PSCL
+    SP  =~ 1 * PNS
 '
 # Fit the model using ML estimator
 fit_MMfull_CFA <- sem(MMfull_CFA, estimator = "ML",
