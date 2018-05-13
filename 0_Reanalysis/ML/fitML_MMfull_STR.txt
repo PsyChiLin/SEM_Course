@@ -44,22 +44,14 @@ Parameter Estimates:
   Standard Errors                             Standard
 
 Regressions:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-  FS ~                                                         
-    SP                0.092    0.024    3.918    0.000    0.092
-  SP ~                                                         
-    EVP               0.343    0.057    6.053    0.000    0.343
-  Std.all
-         
-    0.412
-         
-    0.573
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  FS ~                                                                  
+    SP                0.092    0.024    3.918    0.000    0.092    0.412
+  SP ~                                                                  
+    EVP               0.343    0.057    6.053    0.000    0.343    0.573
 
 Variances:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-   .FS                1.319    0.215    6.124    0.000    1.319
-   .SP               21.249    3.470    6.124    0.000   21.249
-  Std.all
-    0.830
-    0.672
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .FS                1.319    0.215    6.124    0.000    1.319    0.830
+   .SP               21.249    3.470    6.124    0.000   21.249    0.672
 

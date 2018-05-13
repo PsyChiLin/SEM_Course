@@ -1,27 +1,27 @@
-lavaan (0.5-23.1097) converged normally after 125 iterations
+lavaan (0.5-23.1097) converged normally after 130 iterations
 
   Number of observations                            75
 
   Estimator                                        ULS
-  Minimum Function Test Statistic            33417.022
+  Minimum Function Test Statistic            34216.653
   Degrees of freedom                                19
   P-value (Unknown)                                 NA
 
 Model test baseline model:
 
-  Minimum Function Test Statistic           2028284.724
+  Minimum Function Test Statistic           2030379.671
   Degrees of freedom                                28
   P-value                                           NA
 
 User model versus baseline model:
 
-  Comparative Fit Index (CFI)                    0.984
-  Tucker-Lewis Index (TLI)                       0.976
+  Comparative Fit Index (CFI)                    0.983
+  Tucker-Lewis Index (TLI)                       0.975
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          4.874
-  90 Percent Confidence Interval          4.830  4.918
+  RMSEA                                          4.932
+  90 Percent Confidence Interval          4.888  4.976
   P-value RMSEA <= 0.05                          0.000
 
 Standardized Root Mean Square Residual:
@@ -34,66 +34,37 @@ Parameter Estimates:
   Standard Errors                             Standard
 
 Latent Variables:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-  EVP =~                                                       
-    FM_TL             1.000                              11.295
-    BM_TL             0.999    0.002  433.659    0.000   11.289
-    FM_TI             0.365    0.001  451.993    0.000    4.126
-    BM_TI             0.324    0.001  422.690    0.000    3.665
-  FS =~                                                        
-    WF                1.000                               1.550
-    IL                0.929    0.014   67.864    0.000    1.440
-    SF                0.647    0.012   54.860    0.000    1.002
-  SP =~                                                        
-    PNS               1.000                               5.596
-  Std.all
-         
-    0.653
-    0.660
-    0.491
-    0.489
-         
-    0.912
-    0.686
-    0.501
-         
-    1.000
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  EVP =~                                                                
+    FM_TL             1.000                              11.289    0.653
+    BM_TL             1.001    0.002  433.935    0.000   11.297    0.661
+    FM_TI             0.365    0.001  452.177    0.000    4.124    0.491
+    BM_TI             0.324    0.001  422.755    0.000    3.663    0.488
+  FS =~                                                                 
+    WF                1.000                               1.819    0.909
+    IL                0.637    0.010   63.479    0.000    1.158    0.681
+    SF                0.574    0.010   59.108    0.000    1.044    0.497
+  SP =~                                                                 
+    PNS               1.000                               5.586    1.000
 
 Regressions:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-  FS ~                                                         
-    SP                0.195    0.002   97.525    0.000    0.706
-  SP ~                                                         
-    EVP               0.260    0.001  368.808    0.000    0.526
-  Std.all
-         
-    0.706
-         
-    0.526
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  FS ~                                                                  
+    SP                0.231    0.002  114.004    0.000    0.709    0.709
+  SP ~                                                                  
+    EVP               0.261    0.001  369.439    0.000    0.527    0.527
 
 Variances:
-                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv
-   .FM_TL           171.721    0.336  510.325    0.000  171.721
-   .BM_TL           164.974    0.336  490.714    0.000  164.974
-   .FM_TI            53.538    0.130  410.486    0.000   53.538
-   .BM_TI            42.817    0.127  336.356    0.000   42.817
-   .WF                0.489    0.153    3.203    0.001    0.489
-   .IL                2.337    0.145   16.161    0.000    2.337
-   .SF                2.995    0.125   23.964    0.000    2.995
-   .PNS               0.000                               0.000
-    EVP             127.569    0.316  403.986    0.000    1.000
-   .FS                1.204    0.095   12.723    0.000    0.502
-   .SP               22.663    0.119  191.246    0.000    0.724
-  Std.all
-    0.574
-    0.564
-    0.759
-    0.761
-    0.169
-    0.530
-    0.749
-    0.000
-    1.000
-    0.502
-    0.724
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .FM_TL           171.853    0.336  511.433    0.000  171.853    0.574
+   .BM_TL           164.794    0.336  489.835    0.000  164.794    0.564
+   .FM_TI            53.549    0.130  410.618    0.000   53.549    0.759
+   .BM_TI            42.834    0.127  336.532    0.000   42.834    0.761
+   .WF                0.693    0.178    3.899    0.000    0.693    0.173
+   .IL                1.550    0.130   11.935    0.000    1.550    0.536
+   .SF                3.320    0.126   26.343    0.000    3.320    0.753
+   .PNS               0.000                               0.000    0.000
+    EVP             127.437    0.315  404.210    0.000    1.000    1.000
+   .FS                1.645    0.131   12.597    0.000    0.497    0.497
+   .SP               22.521    0.118  190.453    0.000    0.722    0.722
 

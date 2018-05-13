@@ -16,7 +16,7 @@ lower <- '
 0.11,  0.26, -0.05, -0.13, 0.11, 0.47, 0.47,1
 '
 dtacor <- getCov(lower, names=c("FM_TL","BM_TL", "FM_TI", "BM_TI","PNS","WF","IL","SF"))
-dtacov <- cor2cov(dtacor,c(17.3,17.1,8.4,7.5,5.7,1.7,2.1,2.0))
+dtacov <- cor2cov(dtacor,c(17.3,17.1,8.4,7.5,5.7,2.0,1.7,2.1))
 # Define sample size
 N = 75
 
