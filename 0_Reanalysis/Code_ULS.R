@@ -1,5 +1,5 @@
 # Set working directory
-# setwd("~/Google 雲端硬碟/Research/SEM_Course/Reanalysis")
+setwd("~/Google 雲端硬碟/Research/SEM_Course/0_Reanalysis")
 rm(list = ls())
 # Require the packages
 library(lavaan)

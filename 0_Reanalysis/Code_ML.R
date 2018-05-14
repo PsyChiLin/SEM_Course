@@ -1,5 +1,5 @@
 # Set working directory
-# setwd("~/Google 雲端硬碟/Research/SEM_Course/Reanalysis")
+setwd("~/Google 雲端硬碟/Research/SEM_Course/0_Reanalysis")
 rm(list = ls())
 # Require the packages
 library(lavaan)
@@ -35,6 +35,7 @@ fitML_BM <- sem(BM1, estimator = "ML",
 # Show the result
 summary(fitML_BM, standardized=TRUE, fit.measures=T)
 capture.output(summary(fitML_BM, standardized=TRUE, fit.measures=T), file = "fitML_BM.txt")
+fitMeasures(fitML_BM, fit.measures = "all", baseline.model = NULL)
 # Produce Figure
 # pdf(file = "Fig1_BM_Demo.pdf",width = 7, height = 7)
 # semPaths(fitML_BM,what = "col",
@@ -66,6 +67,7 @@ fitML_MM <- sem(MM, estimator = "ML",
 # Show the result
 summary(fitML_MM, standardized=TRUE, fit.measures=T)
 capture.output(summary(fitML_MM, standardized=TRUE, fit.measures=T), file = "fitML_MM.txt")
+fitMeasures(fitML_MM, fit.measures = "all", baseline.model = NULL)
 # Figure
 # pdf(file = "Fig3_MM1_Demo.pdf",width = 7, height = 7)
 # semPaths(fitML_MM1,what = "col",
@@ -96,6 +98,7 @@ fitML_MM2 <- sem(MM2, estimator = "ML",
 # Show the result
 summary(fitML_MM2, standardized=TRUE, fit.measures=T)
 capture.output(summary(fitML_MM2, standardized=TRUE, fit.measures=T), file = "fitML_MMind.txt")
+fitMeasures(fitML_MM2, fit.measures = "all", baseline.model = NULL)
 # Figure
 # pdf(file = "Fig5_MM2_Demo.pdf",width = 7, height = 7)
 # semPaths(fitML_MM2,what = "col",
@@ -124,6 +127,7 @@ fitML_CFApart <- sem(CFApart, estimator = "ML",
 # Show the result
 summary(fitML_CFApart, standardized=TRUE, fit.measures=T)
 capture.output(summary(fitML_CFApart, standardized=TRUE, fit.measures=T), file = "fitML_CFApart.txt")
+fitMeasures(fitML_CFApart, fit.measures = "all", baseline.model = NULL)
 
 pdf(file = "Fig_CFA_RstML.pdf",width = 7, height = 7)
 semPaths(fitML_CFApart,what = "col",whatLabels = "std",
@@ -169,6 +173,8 @@ fitML_MMfull <- sem(MMfull, estimator = "ML",
 # Show the result
 summary(fitML_MMfull, standardized=TRUE, fit.measures=T)
 capture.output(summary(fitML_MMfull, standardized=TRUE, fit.measures=T), file = "fitML_MMfull.txt")
+fitMeasures(fitML_MMfull, fit.measures = "all", baseline.model = NULL)
+
 # Figure
 pdf(file = "Fig_MMfull_RstML.pdf",width = 7, height = 7)
 semPaths(fitML_MMfull,what = "col",whatLabels = "std",
@@ -203,8 +209,8 @@ dev.off()
 
 Strdta <- '
 89.645,
-3.331,1.611,
-30.711,2.962,32.057
+3.919,2.230,
+30.711,3.485,32.057
 '
 StrCov <- getCov(Strdta, names=c("EVP","FS", "SP"))
 MMfull_STR <- '
@@ -219,6 +225,8 @@ fitML_MMfull_STR <- sem(MMfull_STR, estimator = "ML",
 # Show the result
 summary(fitML_MMfull_STR, standardized=TRUE, fit.measures=T)
 capture.output(summary(fitML_MMfull_STR, standardized=TRUE, fit.measures=T), file = "fitML_MMfull_STR.txt")
+fitMeasures(fitML_MMfull_STR, fit.measures = "all", baseline.model = NULL)
+
 # Figure
 pdf(file = "Fig_MMfull_STR_RstML.pdf",width = 7, height = 7)
 semPaths(fitML_MMfull_STR,what = "col",whatLabels = "std",
