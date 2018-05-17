@@ -50,6 +50,34 @@ semPaths(fitML_BM,what = "col",whatLabels = "std",
          style = "lisrel")
 dev.off()
 
+# BM model two stage
+BM2 <- '
+    # latent variable definitions
+    EVP =~ 1 * FM_TL + BM_TL + FM_TI + BM_TI
+    FS  =~ 1 * WF + IL + SF
+'
+# # Fit the model using ML estimator
+# fitML_BM2 <- sem(BM2, estimator = "ML",sample.nobs = N, sample.cov = dtacov)
+# # Show the result
+# summary(fitML_BM2, standardized=TRUE, fit.measures=T)
+# Strdta <- '
+# 111.126,
+# 5.217,2.154
+# '
+# StrCov <- getCov(Strdta, names=c("EVP","FS"))
+# BM2_STR <- '
+#     # regressions
+#     FS ~ EVP
+# '
+# fitML_BM2 <- sem(BM2_STR, estimator = "ML",sample.nobs = N, sample.cov = StrCov )
+# summary(fitML_BM2, standardized=TRUE, fit.measures=T)
+# semPaths(fitML_BM2,what = "col",whatLabels = "std",
+#          nDigits = 3,
+#          #groups = "latents",
+#          bg = "white", 
+#          style = "lisrel")
+
+
 ## MM model
 MM <- '
     # latent variable definitions
