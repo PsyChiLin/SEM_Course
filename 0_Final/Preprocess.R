@@ -19,7 +19,18 @@ De <- describe(dta)
 write.csv(De, file = "DeStat.csv")
 
 ## Explorations
-png(file = "Explore.png",height=40, width=60, units="in", res = 300)
-ggpairs(dta[,-c(1)], lower = list(continuous = "smooth"))
+png(file = "Plots/Demogaphic.png",height=5, width=6, units="in", res = 300)
+ggpairs(dta[,2:5], lower = list(continuous = "smooth"))
 dev.off()
 
+png(file = "Plots/BADL.png",height=5, width=6, units="in", res = 300)
+ggpairs(dta[,6:14], lower = list(continuous = "smooth"))
+dev.off()
+
+png(file = "Plots/IADL.png",height=5, width=6, units="in", res = 300)
+ggpairs(dta[,15:22], lower = list(continuous = "smooth"))
+dev.off()
+
+png(file = "Plots/PSPCGISSFST.png",height=5, width=6, units="in", res = 300)
+ggpairs(dta[,23:31], lower = list(continuous = "smooth"))
+dev.off()
