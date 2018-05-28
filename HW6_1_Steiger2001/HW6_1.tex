@@ -1,0 +1,336 @@
+\documentclass[jou]{apa6}
+
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+
+% Table formatting
+\usepackage{longtable, booktabs}
+\usepackage{lscape}
+% \usepackage[counterclockwise]{rotating}   % Landscape page setup for large tables
+\usepackage{multirow}		% Table styling
+\usepackage{tabularx}		% Control Column width
+\usepackage[flushleft]{threeparttable}	% Allows for three part tables with a specified notes section
+\usepackage{threeparttablex}            % Lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+
+\newenvironment{lltable}
+  {\begin{landscape}\begin{center}\begin{ThreePartTable}}
+  {\end{ThreePartTable}\end{center}\end{landscape}}
+
+  \usepackage{ifthen} % Only add declarations when endfloat package is loaded
+  \ifthenelse{\equal{\string jou}{\string man}}{%
+   \DeclareDelayedFloatFlavor{ThreePartTable}{table} % Make endfloat play with longtable
+   % \DeclareDelayedFloatFlavor{ltable}{table} % Make endfloat play with lscape
+   \DeclareDelayedFloatFlavor{lltable}{table} % Make endfloat play with lscape & longtable
+  }{}%
+
+
+
+% The following enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand\getlongtablewidth{%
+ \begingroup
+  \ifcsname LT@\roman{LT@tables}\endcsname
+  \global\longtablewidth=0pt
+  \renewcommand\LT@entry[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}%
+  \@nameuse{LT@\roman{LT@tables}}%
+  \fi
+\endgroup}
+
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            pdfauthor={},
+            pdftitle={A Commentary on Steiger (2001)},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=black,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+
+% Manuscript styling
+\captionsetup{font=singlespacing,justification=justified}
+\usepackage{csquotes}
+\usepackage{upgreek}
+
+
+
+\usepackage{tikz} % Variable definition to generate author note
+
+% fix for \tightlist problem in pandoc 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Essential manuscript parts
+  \title{A Commentary on Steiger (2001)}
+
+  \shorttitle{A Commentary on Steiger (2001)}
+
+
+  \author{Chi-Lin Yu\textsuperscript{1}}
+
+  % \def\affdep{{""}}%
+  % \def\affcity{{""}}%
+
+  \affiliation{
+    \vspace{0.5cm}
+          \textsuperscript{1} Department of Psychology, National Taiwan University  }
+
+  \authornote{
+    The present commentary is a homework of Structural Equation Modeling
+    course in Department of Psychology, National Taiwan University. Mentor:
+    Li-Jen Weng. Student ID: R05227101 (Chi-Lin Yu). E-mail address:
+    \href{mailto:r05227101@ntu.edu.tw}{\nolinkurl{r05227101@ntu.edu.tw}};
+    \href{mailto:psychilinyu@gmail.com}{\nolinkurl{psychilinyu@gmail.com}}.
+    Draft can be found on \url{https://github.com/PsyChiLin}.
+  }
+
+
+  
+
+
+
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+
+\maketitle
+
+\setcounter{secnumdepth}{0}
+
+
+
+\setlength{\parindent}{4ex}
+
+Structural equation modeling (SEM) is a widely used statistical
+procedure in psychological research. Several introductory papers and
+books have been written to convey basic understandings of SEM in various
+domains. However, several significant practical and theoretical issues
+still exists (Steiger, 2001). Steiger (2001) has presented some comments
+on four published textbooks, including three introductory textbooks
+(Kelloway, 1998; Kline, 1998; Maruyama, 1998) and a edited volume
+(Schumacker \& Marcoulides, 1998). Although the review article (Steiger,
+2001) was written in 2001 (almost 20 years ago), some of presented
+concepts and reminders can still be applied to textbooks or articles
+nowadays. Here, the present study reviewed the work done by Steiger
+(2001) and provided some own perspectives on four of the topics in the
+article. The rest of the present paper is organized as four proposed
+viewpoints and ends with a conclusion section.
+
+The first point I would like to discussion is about model specification,
+or theoretical formulation. Steiger (2001) provided some important
+arguments regarding theoretical formulation in the \enquote{Equivalent
+Models and Path Reversibility} section. He noted the existences of
+equivalent models and suggested that SEM users should understand this
+point while presenting a casual interpretation. Also, he argued that the
+model would become uninterpretable if the direct effect between two
+constructs could be reversed without influencing model fitting. I
+strongly agreed with his perspectives. In the theoretical formulation
+stage, researcher often used correlational studies to establish the
+linkage between constructs. Examples included several articles in the
+reanalysis presentation in our SEM class. For example, in a paper,
+\enquote{Social Perception as a Mediator of the Influence of Early
+Visual Processing on Functional Status in Schizophrenia}, the proposed
+mediation model was constructed by several correlational studies.
+However, we understand that the direction of an arrow between constructs
+could not be implied by correlational studies only. That is, although
+the association between A construct (e.g., social perception) and B
+construct (e.g., functional status) have been frequently reported, we
+still could not confirm the direction of the linkage between these two
+constructs. In addition, empirical research often presented some SEM
+models that have equivalent confirmatory factor analysis (CFA)
+counterparts, implying that the relationship between constructs could
+mainly be captured by using a CFA model without considering direct
+effects in a SEM model. Example also included several articles in the
+reanalysis presentation (Sergi, Rassovsky, Nuechterlein, \& Green, 2006;
+Wright \& Perrone, 2010). Nevertheless, this issue may hinder the
+interpretations of the model. Thus, I think that every SEM users should
+not only understand the existence of equivalent models, but also notice
+them in their own models even before collecting data. Since the
+theoretical formulation stage is the most important stage in a SEM
+study, researcher should carefully review relevant articles and identify
+possible problems in the formulations. It may strongly influence how
+strong the conclusions we can draw in a study.
+
+The second issue that should be mentioned and discussed is the sample
+size issue. Steiger (2001) provided some brief comments on the
+\enquote{Power and Sample Size Analysis} section. He mentioned that
+researchers should perform Monte Carlo simulation or some other
+techniques to assess sample size. I agree that \enquote{Choice of an
+appropriate sample size is critical in any multivariate analysis}
+(Steiger, 2001), and I also believe that it is particularly true in the
+domain of SEM since SEM is developed based on asymptotic theory. For
+example, the most popular estimation methods, maximum likelihood, has
+several desire properties, including unbiasedness, consistency,
+efficiency and normality, when the assumptions of large sample size
+hold. If researchers do not understand the importance of sample size and
+start to perform SEM with samll sample size, the desire properties may
+not exist and the implications of the analyses may be incorrect.
+Although how large the sample size is large enough is still under
+debate, I think that all the textbook or introductory papers must
+mention the asymptotic theory of SEM and the importance of sample size
+in SEM. Furthermore, as mentioned in Steiger (2001), power analysis
+could be provided in some advanced sections.
+
+Third, the reporting techniques are interesting topics to be discussed.
+Some articles with SEM were somehow controversial, because some
+researcher chose to report the results, e.g, fit indices, which favor
+their hypotheses. Some might use strategies to avoid criticism. Also,
+few articles report enough information for other researchers to
+replicate the analyses. Steiger (2001) provided his opinion that every
+SEM textbooks should include a section with example of what to do and
+what not to do when reporting the results of SEM. I agree with this
+argument but provide a extension. I think every journals, which accepts
+SEM related papers, should provide their own templates or guidelines of
+reporting SEM. Editors should state that papers that do not contain some
+particular information will not be accepted (even not be reviewed). On
+the one hand, since every researchers have their own reporting styles
+that may not be specifically appropriate for the journal, providing a
+reporting template could save some time for researchers. I believe that
+journals are responsible for doing this. On the other hand, journals can
+decide what kind of information they want to see, what kind of
+information should be place in supplementary files, and what kind of
+information can be neglected. It would allow journals to establish their
+own styles and make all the submitted articles as close to the scope of
+the journal as possible. If journals can provide such information,
+either a template or a guide, it will be extremely helpful for users to
+focus on content related information rather than reporting or
+formatting.
+
+Last but not least, a comment that Steiger (2001) made on Schumacker and
+Marcoulides (1998) is really significant for SEM educations. Steiger
+(2001) mentioned that there is no information of a link or site where
+data files can be downloaded, and the example in the book lacks some
+beneficial details. I think that it is really important for a textbook
+or a tutorial paper to present their sample data and details to
+replicate the examples. It is called \enquote{minimum reproducible
+example}. These arguments are not restricted to SEM analysis but applied
+to all kinds of methodology. A good tutorial should allow users to
+easily access to the core of a method. If the data in the example is not
+available, how can a beginner strat ? Also, if there is no enough detail
+about the example, users may not be able to learn from the example. In
+my own experience (of course a personal one), any new methodology
+without providing an open sample dataset to perform the demonstrations
+would not be accepted by journals. I have requested to provide the
+sample dataset to support new methods twice (and one is already
+rejected\ldots{}), even if I have provided all the source code and lots
+of descriptions (Hope that my paper can be accepted after providing a
+sample dataset\ldots{}). Thus, I now think that making data/code
+available is essential for tutorial purposes. To be more general, in my
+opinion, every papers should make the dataset available (not only in SEM
+domain or for educational purposes). Several societies have provided
+enough space and platform to allow researchers to share their
+code/data/ideas/manuscripts. Examples include Github, zenodo
+(\url{https://zenodo.org/}), Open Science Framework (OSF,
+\url{https://osf.io/}), and so on. I believe that it is a good way to
+increase scientific progress through \enquote{replications} and
+\enquote{reproducible research}. At least, back to the comments of
+Steiger (2001), clear descriptions and reproducible examples with
+available dataset could facilitate the educations of SEM.
+
+In summary, the present commentary reviewed four interesting topics
+discussed in Steiger (2001) and provided own viewpoints, from
+theoretical relevant to tutorial relevant topics. I think most of the
+comments in Steiger (2001) can be applied to other multivariate
+statistical textbooks, and most of the discussion in the present study
+can be applied to recent research. The present study believe that all of
+the issues can be addressed through the successful interaction between
+researchers, either an expert or a beginner, as long as all of us hope
+to benefit the scientific progress.
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-kelloway1998using}{}%
+Kelloway, E. K. (1998). \emph{Using lisrel for structural equation
+modeling: A researcher's guide}. Sage.
+
+\leavevmode\hypertarget{ref-kline1998principles}{}%
+Kline, R. (1998). Principles and practice of structural equation
+modeling, 3rd edn guilford press. \emph{New York}.
+
+\leavevmode\hypertarget{ref-maruyama1998basics}{}%
+Maruyama, G. (1998). \emph{Basics of structural equation modeling}.
+Sage.
+
+\leavevmode\hypertarget{ref-schumacker1998interaction}{}%
+Schumacker, R. E., \& Marcoulides, G. A. (1998). Interaction and
+nonlinear effects in structural equation modeling.
+
+\leavevmode\hypertarget{ref-sergi2006social}{}%
+Sergi, M. J., Rassovsky, Y., Nuechterlein, K. H., \& Green, M. F.
+(2006). Social perception as a mediator of the influence of early visual
+processing on functional status in schizophrenia. \emph{American Journal
+of Psychiatry}, \emph{163}(3), 448--454.
+
+\leavevmode\hypertarget{ref-steiger2001driving}{}%
+Steiger, J. H. (2001). Driving fast in reverse. \emph{Journal of the
+American Statistical Association}, \emph{96}(453), 331--338.
+
+\leavevmode\hypertarget{ref-wright2010examination}{}%
+Wright, S. L., \& Perrone, K. M. (2010). An examination of the role of
+attachment and efficacy in life satisfaction. \emph{The Counseling
+Psychologist}, \emph{38}(6), 796--823.
+
+
+
+
+
+
+\end{document}

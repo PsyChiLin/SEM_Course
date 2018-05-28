@@ -1,0 +1,51 @@
+---
+title             : "A Commentary on Steiger (2001)"
+shorttitle        : "A Commentary on Steiger (2001)"
+
+author: 
+  - name          : "Chi-Lin Yu"
+    affiliation   : "1"
+affiliation:
+  - id            : "1"
+    institution   : "Department of Psychology, National Taiwan University "
+
+author_note: |
+  The present commentary is a homework of Structural Equation Modeling course in Department of Psychology, National Taiwan University. Mentor: Li-Jen Weng. Student ID: R05227101 (Chi-Lin Yu). E-mail address: r05227101@ntu.edu.tw; psychilinyu@gmail.com. Draft can be found on https://github.com/PsyChiLin.
+
+bibliography      : ["references.bib"]
+
+figsintext        : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : no
+mask              : no
+
+class             : "jou"
+output            : papaja::apa6_pdf
+---
+
+```{r load_packages, include = FALSE}
+library("papaja")
+```
+\setlength{\parindent}{4ex}
+Structural equation modeling (SEM) is a widely used statistical procedure in psychological research. Several introductory papers and books have been written to convey basic understandings of SEM in various domains. However, several significant practical and theoretical issues still exists [@steiger2001driving]. Steiger (2001) has presented some comments on four published textbooks, including three introductory textbooks [@kelloway1998using; @kline1998principles; @maruyama1998basics] and a edited volume [@schumacker1998interaction]. Although the review article [@steiger2001driving] was written in 2001 (almost 20 years ago), some of presented concepts and reminders can still be applied to textbooks or articles nowadays. Here, the present study reviewed the work done by Steiger (2001) and provided some own perspectives on four of the topics in the article. The rest of the present paper is organized as four proposed viewpoints and ends with a conclusion section. 
+
+The first point I would like to discussion is about model specification, or theoretical formulation. Steiger (2001) provided some important arguments regarding theoretical formulation in the "Equivalent Models and Path Reversibility" section. He noted the existences of equivalent models and suggested that SEM users should understand this point while presenting a casual interpretation. Also, he argued that the model would become uninterpretable if the direct effect between two constructs could be reversed without influencing model fitting. I strongly agreed with his perspectives. In the theoretical formulation stage, researcher often used correlational studies to establish the linkage between constructs. Examples included several articles in the reanalysis presentation in our SEM class. For example, in a paper, "Social Perception as a Mediator of the Influence of Early Visual Processing on Functional Status in Schizophrenia", the proposed mediation model was constructed by several correlational studies. However, we understand that the direction of an arrow between constructs could not be implied by correlational studies only. That is, although the association between A construct (e.g., social perception) and B construct (e.g., functional status) have been frequently reported, we still could not confirm the direction of the linkage between these two constructs. In addition, empirical research often presented some SEM models that have equivalent confirmatory factor analysis (CFA) counterparts, implying that the relationship between constructs could mainly be captured by using a CFA model without considering direct effects in a SEM model. Example also included several articles in the reanalysis presentation [@sergi2006social; @wright2010examination]. Nevertheless, this issue may hinder the interpretations of the model. Thus, I think that every SEM users should not only understand the existence of equivalent models, but also notice them in their own models even before collecting data. Since the theoretical formulation stage is the most important stage in a SEM study, researcher should carefully review relevant articles and identify possible problems in the formulations. It may strongly influence how strong the conclusions we can draw in a study.
+
+The second issue that should be mentioned and discussed is the sample size issue. Steiger (2001) provided some brief comments on the "Power and Sample Size Analysis" section. He mentioned that researchers should perform Monte Carlo simulation or some other techniques to assess sample size. I agree that "Choice of an appropriate sample size is critical in any multivariate analysis" [@steiger2001driving], and I also believe that it is particularly true in the domain of SEM since SEM is developed based on asymptotic theory. For example, the most popular estimation methods, maximum likelihood, has several desire properties, including unbiasedness, consistency, efficiency and normality, when the assumptions of large sample size hold. If researchers do not understand the importance of sample size and start to perform SEM with samll sample size, the desire properties may not exist and the implications of the analyses may be incorrect. Although how large the sample size is large enough is still under debate, I think that all the textbook or introductory papers must mention the asymptotic theory of SEM and the importance of sample size in SEM. Furthermore, as mentioned in Steiger (2001), power analysis could be provided in some advanced sections.
+
+Third, the reporting techniques are interesting topics to be discussed. Some articles with SEM were somehow controversial, because some researcher chose to report the results, e.g, fit indices, which favor their hypotheses. Some might use strategies to avoid criticism. Also, few articles report enough information for other researchers to replicate the analyses. Steiger (2001) provided his opinion that every SEM textbooks should include a section with example of what to do and what not to do when reporting the results of SEM. I agree with this argument but provide a extension. I think every journals, which accepts SEM related papers, should provide their own templates or guidelines of reporting SEM. Editors should state that papers that do not contain some particular information will not be accepted (even not be reviewed). On the one hand, since every researchers have their own reporting styles that may not be specifically appropriate for the journal, providing a reporting template could save some time for researchers. I believe that journals are responsible for doing this. On the other hand, journals can decide what kind of information they want to see, what kind of information should be place in supplementary files, and what kind of information can be neglected. It would allow journals to establish their own styles and make all the submitted articles as close to the scope of the journal as possible. If journals can provide such information, either a template or a guide, it will be extremely helpful for users to focus on content related information rather than reporting or formatting.
+
+Last but not least, a comment that Steiger (2001) made on Schumacker and Marcoulides (1998) is really significant for SEM educations. Steiger (2001) mentioned that there is no information of a link or site where data files can be downloaded, and the example in the book lacks some beneficial details. I think that it is really important for a textbook or a tutorial paper to present their sample data and details to replicate the examples. It is called "minimum reproducible example". These arguments are not restricted to SEM analysis but applied to all kinds of methodology. A good tutorial should allow users to easily access to the core of a method. If the data in the example is not available, how can a beginner strat ? Also, if there is no enough detail about the example, users may not be able to learn from the example. In my own experience (of course a personal one), any new methodology without providing an open sample dataset to perform the demonstrations would not be accepted by journals. I have requested to provide the sample dataset to support new methods twice (and one is already rejected...), even if I have provided all the source code and lots of descriptions (Hope that my paper can be accepted after providing a sample dataset...). Thus, I now think that making data/code available is essential for tutorial purposes. To be more general, in my opinion, every papers should make the dataset available (not only in SEM domain or for educational purposes). Several societies have provided enough space and platform to allow researchers to share their code/data/ideas/manuscripts. Examples include Github, zenodo (https://zenodo.org/), Open Science Framework (OSF, https://osf.io/), and so on. I believe that it is a good way to increase scientific progress through "replications" and "reproducible research". At least, back to the comments of Steiger (2001), clear descriptions and reproducible examples with available dataset could facilitate the educations of SEM.
+
+In summary, the present commentary reviewed four interesting topics discussed in Steiger (2001) and provided own viewpoints, from theoretical relevant to tutorial relevant topics. I think most of the comments in Steiger (2001) can be applied to other multivariate statistical textbooks, and most of the discussion in the present study can be applied to recent research. The present study believe that all of the issues can be addressed through the successful interaction between researchers, either an expert or a beginner, as long as all of us hope to benefit the scientific progress.
+
+# References
+
+```{r create_r-references}
+r_refs(file = "references.bib")
+```
+
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
